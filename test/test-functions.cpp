@@ -290,4 +290,5 @@ TEST_CASE("combinations") {
   CHECK(env.render("{{ not (true) }}", data) == "false");
   CHECK(env.render("{{ true or (true or true) }}", data) == "true");
   CHECK(env.render("{{ at(list_of_objects, 1).b }}", data) == "3");
+  CHECK(env.render("{{ join(sort([3,2,1]), \" + \") }}", data) == "1 + 2 + 3");
 }
